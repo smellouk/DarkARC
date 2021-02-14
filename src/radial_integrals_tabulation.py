@@ -1,10 +1,8 @@
-import numpy as np
-import os.path
 import multiprocessing
-from tqdm import tqdm
-import time
+import os.path
 
-from units import *
+from tqdm import tqdm
+
 from radial_integrals import *
 
 # Parameters on the table's size and argument intervals
@@ -14,6 +12,7 @@ qMax = 1000*keV
 kMin = 0.1*keV
 kMax = 100*keV
 gridsize = 100
+methods_hierarchy = ["analytic", "Hankel", "numpy-stepwise", "quadosc"]
 
 # Parallel tabularization of the radial integrals
 def main():
@@ -22,7 +21,7 @@ def main():
 	
 	####################################################################################
 
-	element = Ar
+	element = Xe
 	print("Tabulate the radial integrals for",element.name,".\n")
 	
 	# Count number of tables to be created in total, and check for previously completed integral tables

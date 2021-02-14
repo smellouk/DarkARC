@@ -1,16 +1,13 @@
-import os
+import sys
 import sys
 import time
 
-import numpy as np
 from sympy.physics.wigner import gaunt
-from scipy.special import sph_harm
-
-from units import *
-from wave_functions import *
-from vector_spherical_harmonics import *
 
 from radial_integrals_tabulation import qMin, qMax, kMin, kMax, lPrime_max, gridsize
+from vector_spherical_harmonics import *
+from wave_functions import *
+
 
 # THIS FUNCTION REQUIRES THE FINISHED TABULATION OF THE RADIAL INTEGRALS
 def main():

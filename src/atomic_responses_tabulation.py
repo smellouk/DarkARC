@@ -1,13 +1,13 @@
-import time
-import numpy as np
 import multiprocessing
-from tqdm import tqdm
+import os.path
+
+from atomic_responses import *
 from sympy.physics.wigner import gaunt, wigner_3j
 
+from radial_integrals_tabulation import qMin, qMax, kMin, kMax, lPrime_max, gridsize
 from vector_spherical_harmonics import *
 from wave_functions import *
-from electronic_responses import *
-from radial_integrals_tabulation import qMin, qMax, kMin, kMax, lPrime_max, gridsize
+
 
 def main():
 	processes = multiprocessing.cpu_count()
@@ -34,7 +34,7 @@ def main():
 
 	print("Start tabulation of electronic ionization responses using",processes,"cores. Total number of tables:",counter_total)   
 	with multiprocessing.Pool(processes) as pool:
-		pool.starmap(tabulate_electronic_ionization_response,args)	
+		pool.starmap(tabulate_atomic_response_function,args)
 	
 	####################################################################################
 	end_tot = time.time()

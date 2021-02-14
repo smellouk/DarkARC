@@ -1,13 +1,12 @@
+import math
 import sys
 import time
+
 import scipy.integrate as integrate
-import scipy.special as special
-import hankel
-import mpmath as mp
-import math
 from hankel import HankelTransform
 
 from wave_functions import *
+
 
 def main():
 	start_tot = time.time()

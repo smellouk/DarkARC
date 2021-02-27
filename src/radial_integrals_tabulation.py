@@ -21,7 +21,7 @@ def main():
 	
 	####################################################################################
 
-	element = Xe
+	element = Ar
 	print("Tabulate the radial integrals for",element.name,".\n")
 	
 	# Count number of tables to be created in total, and check for previously completed integral tables
